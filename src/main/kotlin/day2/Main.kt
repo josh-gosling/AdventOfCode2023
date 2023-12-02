@@ -5,19 +5,19 @@ import java.io.File
 
 fun solvePart1(input: List<String>): Int {
     val possibleGames = mutableListOf<String>()
-    input.forEach {
-        val subsets = it.split(": ")[1].split("; ")
-        val id = it.split(": ")[0]
+    input.forEach { game ->
+        val subsets = game.split(": ")[1].split("; ")
+        val id = game.split(": ")[0]
         var isPossible = true
 
-        subsets.forEach {
+        subsets.forEach { subset ->
             var greenCount = 0
             var redCount = 0
             var blueCount = 0
-            val cubesRevealed = it.split(", ")
-            cubesRevealed.forEach {
-                val quantity = it.split(" ")[0].toInt()
-                val colour = it.split(" ")[1]
+            val cubesRevealed = subset.split(", ")
+            cubesRevealed.forEach { cube ->
+                val quantity = cube.split(" ")[0].toInt()
+                val colour = cube.split(" ")[1]
 
                 when (colour) {
                     "blue" -> blueCount += quantity
