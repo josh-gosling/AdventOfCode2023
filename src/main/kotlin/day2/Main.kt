@@ -59,7 +59,7 @@ fun solvePart1(id: String, subsets: List<String>): MutableList<String> {
     return possibleGames
 }
 
-fun loop(input: List<String>): List<Int> {
+fun loopGames(input: List<String>): List<Int> {
     val possibleGames = mutableListOf<String>()
     val minNumber = mutableListOf<Int>()
     input.forEach { game ->
@@ -74,5 +74,5 @@ fun loop(input: List<String>): List<Int> {
 
 fun main() {
     val input = File("inputs/day2.txt").readText().replace("\r", "").split("\n")
-    println(loop(input))
+    println(loopGames(input))
 }
